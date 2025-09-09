@@ -125,11 +125,11 @@ Essa personalização adiciona informações específicas do policial (**matríc
   - `primeiro-acesso` → cadastro de senha inicial  
   - `sgpol-search` → busca de policiais e fotos no SGPol  
 - O contexto do usuário autenticado inclui:  
-  `uid`, `id_policiais`, `id_unidade`, `id_unidade_atual`, `nomenclatura da unidade`, `código SGPol`, `código SISGEPAT`.  
+  `uid`, `id_policiais`, `id_unidade`, `id_unidade_atual`, `nomenclatura da unidade`, `código SGPol`.  
 
 ---
 
-## 7. Pilares A.V.O (Acesso, Visualização e Operação)
+## 7. PERMISSÕES - Pilares A.V.O (Acesso, Visualização e Operação)
 
 A camada **A.V.O** organiza como o usuário interage com o sistema.  
 Ela é composta por três pilares complementares:  
@@ -186,7 +186,16 @@ SELECT * FROM usuarios_roles
 WHERE user_id = 'uuid_usuario'
 AND is_temporary = true;
 ```
+### 7.5 Funções de Verificação de Permissões
+- `verificar_minha_operacao(moduleId)`: Retorna o nível de operação do usuário autenticado para um módulo específico. Consulta usuarios_credenciais filtrando pelo auth.uid() atual e retorna o id_permissoes associado ao módulo.
 
+- `verificar_operacao_usuario(userId, moduleId)`: Similar à anterior, mas verifica as operações de um usuário específico (não o autenticado). Útil para administradores verificarem permissões de outros usuários.
+
+- `verificar_meu_acesso(moduleId)`: Verifica se o usuário autenticado tem acesso a um módulo. Retorna boolean consultando view_usuarios_roles_ativos com base no auth.uid() e filtrando por módulo e temporalidade das roles.
+
+- `verificar_acesso_usuario(userId, moduleId)`: Verifica acesso de um usuário específico a um módulo. Mesma lógica da anterior, mas para qualquer usuário (não apenas o autenticado).
+
+As funções "minha/meu" usam auth.uid() (contexto do usuário autenticado), enquanto as "usuario" recebem userId como parâmetro (verificação de terceiros).
 ---
 
 ## 8. Situação Atual dos Módulos
