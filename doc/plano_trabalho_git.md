@@ -195,5 +195,5 @@ AND is_temporary = true;
 |----------------|-------------------------|-------------|
 | Administração  | Parcialmente implementado | - |
 | Autenticação   | Funcional                | - |
-| Página Teste 2 | Implementado             | Validar o módulo de permissões (A.V.O) |
-| Layout/Design  | Migrado                  | Fontes e cores já migradas; layout pode ser adaptado |
+| Página Teste 2 | Implementado             | Criado com objetivo de validar o módulo de permissões (A.V.O) |
+| Layout/Design  | Migrado                  | Fontes e cores já migradas; layout pode ser adaptado conforme a necessidade |
