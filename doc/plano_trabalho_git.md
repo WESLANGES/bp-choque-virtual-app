@@ -187,7 +187,7 @@ WHERE user_id = 'uuid_usuario'
 AND is_temporary = true;
 ```
 ### 7.5 Funções de Verificação de Permissões
-- ```sql verificar_minha_operacao(moduleId)```: Retorna o nível de operação do usuário autenticado para um módulo específico. Consulta usuarios_credenciais filtrando pelo auth.uid() atual e retorna o id_permissoes associado ao módulo.
+- `verificar_minha_operacao(moduleId)`: Retorna o nível de operação do usuário autenticado para um módulo específico. Consulta usuarios_credenciais filtrando pelo auth.uid() atual e retorna o id_permissoes associado ao módulo.
 
 - `verificar_operacao_usuario(userId, moduleId)`: Similar à anterior, mas verifica as operações de um usuário específico (não o autenticado). Útil para administradores verificarem permissões de outros usuários.
 
