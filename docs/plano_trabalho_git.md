@@ -1,4 +1,4 @@
-﻿# Plano de Trabalho - BPChoqueVirtual Git
+# Plano de Trabalho - BPChoqueVirtual Git
 
 ## 1. Detalhes da Migra├º├úo e Estrutura Atual
 
