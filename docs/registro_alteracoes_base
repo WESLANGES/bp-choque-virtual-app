@@ -1,0 +1,40 @@
+# Registro de Alterações na Base de Dados Duplicada
+
+## Contexto
+Esta base de dados foi **duplicada da versão 1.0 em produção**, que atualmente está integrada ao front-end em **Flutter**.  
+O objetivo da duplicação é permitir que a equipe possa desenvolver o **novo front-end em React** com o **mínimo de impacto** na base de dados em produção.  
+
+⚠️ **Importante:**  
+- Todas as alterações aqui registradas devem ser **discutidas, analisadas e aprovadas pela equipe**.  
+- Alterações inevitáveis devem ter **plano de migração** e **documentação clara**.  
+- O objetivo é manter **compatibilidade** entre a base 1.0 (Flutter) e a nova versão (React), reduzindo riscos.
+
+---
+
+## Estrutura do Registro
+
+Cada alteração deve conter:
+1. **Data da alteração**
+2. **Responsável**
+3. **Descrição da alteração**
+4. **Motivo**
+5. **Impacto esperado**
+6. **Plano de migração (se aplicável)**
+
+---
+
+## Alterações Realizadas
+
+### [2025-09-08] Exemplo
+- **Responsável:** João Silva  
+- **Descrição:** Adicionado campo `tenant_id` na tabela `usuarios_roles`.  
+- **Motivo:** Suporte ao controle multi-tenant no novo front-end React.  
+- **Impacto:** Nenhum impacto imediato na versão Flutter, apenas no React.  
+- **Plano de Migração:** Propagar campo `tenant_id` para produção quando o React substituir totalmente o Flutter.  
+
+---
+
+## Próximos Passos
+- Continuar documentando todas as alterações.  
+- Avaliar periodicamente o impacto das mudanças.  
+- Garantir que a documentação esteja sempre atualizada antes de integração com a base de produção.  
